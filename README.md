@@ -22,12 +22,6 @@ Donde:
 - **Conversión de Unidades:** Elige entre diferentes unidades para la distancia (metros, kilómetros, millas) y la frecuencia (GHz, MHz, kHz).
 - **Interfaz:** La interfaz está construida usando `tkinter` y estilizada con `ttk` para un aspecto moderno.
 
-### Explicación del Gráfico
-
-El gráfico generado por la aplicación representa la zona de Fresnel como una elipse alargada entre las dos antenas. La línea central representa la línea de visión directa (LoS), y la región sombreada indica el área de la primera zona de Fresnel. Si existe alguna obstrucción dentro de esta zona sombreada, puede interferir con la señal y degradar la calidad de la comunicación.
-
-Este gráfico es útil para visualizar cómo la zona de Fresnel varía en función de la distancia entre las antenas y la frecuencia utilizada, lo que ayuda en la planificación y optimización de sistemas de comunicación inalámbrica.
-
 ## Instalación
 
 1. **Clonar el Repositorio:**
