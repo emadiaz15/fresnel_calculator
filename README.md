@@ -73,7 +73,6 @@ fresnel_calculator/
 │   ├── __init__.py         # Inicializador del paquete
 │   ├── interface.py        # Lógica y diseño de la interfaz gráfica
 │   ├── design.py           # Configuración de estilo y temas
-│   └── plot.py             # Generación y visualización del gráfico de la zona de Fresnel
 │
 ├── README.md               # Documentación del proyecto
 └── requirements.txt        # Dependencias del proyecto
