@@ -8,7 +8,6 @@ class FresnelApp:
         self.root = root
         self.root.title("Fresnel Zone Calculator")  # Establece el título de la ventana
         self.root.geometry("400x350")  # Establece las dimensiones de la ventana
-
         # Configuración de estilos para los widgets
         style = ttk.Style()
         style.configure('TLabel', font=('Arial', 12))
@@ -53,53 +52,20 @@ class FresnelApp:
         # Botón para calcular la zona de Fresnel
         self.calculate_button = ttk.Button(root, text="Calculate", command=self.calculate)
         self.calculate_button.pack()
-
+        
+        self.footer = ttk.Label(root, text="Create by Emanuel Diaz")
+        self.footer.pack(pady=20)
+        
     def calculate(self):
         try:
             # Validar y convertir la entrada de distancia
             distance = validate_input(self.distance_entry.get())
-            # Validar y convertir la entrada de frecuencia
             frequency = validate_input(self.frequency_entry.get())
-
-            # Convertir la distancia a metros si es necesario
-            if self.distance_unit.get() == "km":
-                distance *= 1000
-            elif self.distance_unit.get() == "mi":
-                distance *= 1609.34
-
-            # Convertir la frecuencia a GHz si es necesario
-            if self.frequency_unit.get() == "MHz":
-                frequency /= 1000
-            elif self.frequency_unit.get() == "kHz":
-                frequency /= 1_000_000
 
             # Calcular el radio de la zona de Fresnel
             result = calculate_fresnel_zone(distance, frequency)
             # Mostrar el resultado en la etiqueta
-            self.result_label.config(text=f"Fresnel Zone Radius: {result:.2f} meters")
-        except ValueError as e:
-            # Mostrar el mensaje de error si la validación falla
-            self.result_label.config(text=str(e))
-
-    def plot_fresnel(self):
-        try:
-            # Validar y convertir la entrada de distancia
-            distance = validate_input(self.distance_entry.get())
-            # Validar y convertir la entrada de frecuencia
-            frequency = validate_input(self.frequency_entry.get())
-
-            # Convertir la distancia a metros si es necesario
-            if self.distance_unit.get() == "km":
-                distance *= 1000
-            elif self.distance_unit.get() == "mi":
-                distance *= 1609.34
-
-            # Convertir la frecuencia a GHz si es necesario
-            if self.frequency_unit.get() == "MHz":
-                frequency /= 1000
-            elif self.frequency_unit.get() == "kHz":
-                frequency /= 1_000_000
-
+            self.result_label.config(text=f"Fresnel Zone Radius: {result} meters")
         except ValueError as e:
             # Mostrar el mensaje de error si la validación falla
             self.result_label.config(text=str(e))

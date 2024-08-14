@@ -1,4 +1,4 @@
-import math  # Importa la biblioteca matemática estándar de Python
+import math  # Importa la libreria matemática estándar de Python
 
 def calculate_fresnel_zone(distance, frequency):
     # Calcula el radio de la zona de Fresnel utilizando la fórmula dada
@@ -8,5 +8,4 @@ def calculate_fresnel_zone(distance, frequency):
     # - R es el radio de la zona de Fresnel en metros.
     # - d es la distancia entre las antenas en metros.
     # - f es la frecuencia en GHz.
-    
-    return 17.32 * math.sqrt((distance / 1000) / (4 * frequency))
+    return 8.656 * (math.sqrt(float(distance) / float(frequency)))
